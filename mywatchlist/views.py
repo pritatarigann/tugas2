@@ -10,13 +10,16 @@ def show_mywatchlist(request):
     
     watched = 0
     unwatched = 0
+
     message = ""
+    # menghitung jumlah film yang sudah dan belum ditonton
     for movie in mywatchlist:
         if movie.watched:
             watched += 1
         else:
             unwatched += 1
     print(watched)
+    # menampilkan pesan 
     if watched >= unwatched:
         message = "Selamat, kamu sudah banyak menonton!"
     else:
