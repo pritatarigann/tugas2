@@ -15,16 +15,6 @@
         <th bgcolor="#CD5C5C", colspan="2">Review</th>
         
     </tr>
-    {% for movie in watchlist %}
-    <tr>
-        <th bgcolor="FFFAF0">{{list.watched}}</th>
-        <th colspan="2", bgcolor="FFFAF0">{{movie.title}}</th>
-        <th bgcolor="FFFAFA">{{movie.release_date}}</th>
-        <th bgcolor="FFFAF0">{{movie.rating}}</th>
-        <th colspan="3", bgcolor="FFFAFA", style="text-align: left; size: 11">{{movie.review}}</th>
-
-    </tr>
-    {% endfor %}
   </table>
 
   <h1 style="color:#008080; text-align: center;"><span>✨</span>{{message}}</h1>
