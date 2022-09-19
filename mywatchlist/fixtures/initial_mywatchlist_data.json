@@ -1,5 +1,4 @@
-[
-    {
+[{
         "model": "mywatchlist.mywatchlist",
         "pk": 1,
         "fields":{
