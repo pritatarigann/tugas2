@@ -6,7 +6,7 @@
   <h1 style="text-align: center; color: #008080"><span>🍿</span>My Watch List<span>🍿</span></h1>
   <h3 style="text-align: center; color: #0f3041">by: Prita Tarigan (2106751190)</h3>
 
-  <table s="all", border="1"rule>
+  <table rules="all", border="1", table align="center">
     <tr>
         <th bgcolor="#CD5C5C">Watched</th>
         <th bgcolor="#CD5C5C">Title</th>
@@ -17,7 +17,7 @@
     </tr>
     {% for movie in watchlist %}
     <tr>
-        <th bgcolor="FFFAF0">{{movie.watched}}</th>
+        <th bgcolor="FFFAF0">{{list.watched}}</th>
         <th colspan="2", bgcolor="FFFAF0">{{movie.title}}</th>
         <th bgcolor="FFFAFA">{{movie.release_date}}</th>
         <th bgcolor="FFFAF0">{{movie.rating}}</th>
