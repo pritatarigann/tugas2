@@ -12,6 +12,7 @@ def show_mywatchlist(request):
     unwatched = MyWatchList.objects.filter(watched=False).count()
 
     message = ""
+
     # menampilkan pesan 
     if watched >= unwatched:
         message = "Selamat, kamu sudah banyak menonton!"
