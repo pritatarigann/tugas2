@@ -28,6 +28,8 @@ def show_mywatchlist(request):
     context = {
         "watchlist": mywatchlist,
         "message": message,
+        "nama": 'Prita Tarigan',
+        "npm": "2106751190"
     }
     return render(request, 'mywatchlist.html', context)
 
