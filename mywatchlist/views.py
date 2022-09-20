@@ -8,17 +8,10 @@ from django.core import serializers
 def show_mywatchlist(request):
     mywatchlist = MyWatchList.objects.all()
     
-    watched = 0
-    unwatched = 0
+    watched = MyWatchList.objects.filter(watched=True).count()
+    unwatched = MyWatchList.objects.filter(watched=False).count()
 
     message = ""
-    # menghitung jumlah film yang sudah dan belum ditonton
-    for movie in mywatchlist:
-        if movie.watched:
-            watched += 1
-        else:
-            unwatched += 1
-    print(watched)
     # menampilkan pesan 
     if watched >= unwatched:
         message = "Selamat, kamu sudah banyak menonton!"
