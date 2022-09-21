@@ -6,6 +6,6 @@ urlpatterns = [
     path('html/', show_mywatchlist, name='show_mywatchlist'),
     path('json/', show_mywatchlist_json, name='show_mywatchlist_json'),
     path('xml/', show_mywatchlist_xml, name='show_mywatchlist_xml'),
-    path('xml/', show_mywatchlist_xml_id, name='show_mywatchlist_xml_id'),
-    path('json/', show_mywatchlist_json_id, name='show_mywatchlist_json_id'),
+    path('xml/<int:id>', show_mywatchlist_xml_id, name='show_mywatchlist_xml_id'),
+    path('json/<int:id>', show_mywatchlist_json_id, name='show_mywatchlist_json_id'),
 ]
