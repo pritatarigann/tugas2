@@ -34,3 +34,11 @@ def show_mywatchlist_json(request):
 def show_mywatchlist_xml(request):
     mywatchlist = MyWatchList.objects.all()
     return HttpResponse(serializers.serialize("xml", mywatchlist), content_type="application/xml")
+
+def show_mywatchlist_json_id(request, id):
+    mywatchlist = MyWatchList.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("json", mywatchlist), content_type="application/json")
+
+def show_mywatchlist_xml_id(request, id):
+    mywatchlist = MyWatchList.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("xml", mywatchlist), content_type="application/xml")
