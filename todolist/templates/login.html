@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block meta %}
+
+<!--style reference: https://colorlib.com/-->
+<style>
+    html {
+     scroll-behavior: smooth;
+    }
+    
+    body{
+        background: linear-gradient(45deg, #47efe4, #5178dc);
+	}
+    .card-body {
+            width:300px;
+            margin: 130px auto;
+            padding:12px 60px;
+            background-color: transparent !important;;
+            border-radius: 3px;
+            box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+            backdrop-filter: blur(6px);
+    }
+    
+
+    tr {
+        height: 50px;
+    }
+
+    td{
+        padding-left: 8px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+    }
+
+    h1 {
+        padding: 10px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    a,p {
+        color: rgb(0, 0, 0);
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .button {
+        border: 0px;
+        background-color: transparent;
+        color: #fff;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        margin: auto;
+        display: block;
+        justify-content: center;
+        box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
+        width: 120px;
+        
+    }
+
+    .header_style{
+        width: 100%;
+        float: left;
+        font-size: 40px;
+        color: #fdfcfc;
+        text-align: center;
+        margin: 0px;
+        font-family: 'Lucida Bright', sans-serif; 
+    }
+
+</style>
+
+<title>Login</title>
+{% endblock meta %}
+
+{% block content %}
+
+<div class = "login">
+
+    <div class="card-body">
+    <h1 class="header_style">Login</h1>
+
+    <form method="POST" action="">
+        <br><br><br><hr><br>
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+            </tr>
+                    
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+        
+    <p>Still new? <b><a href="{% url 'todolist:register' %}">Join now</a></b></p>
+    </div>
+</div>
+
+{% endblock content %}
