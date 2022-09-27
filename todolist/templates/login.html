@@ -82,7 +82,7 @@
     <h1 class="header_style">Login</h1>
 
     <form method="POST" action="">
-        <br><br><br><hr><br>
+        <br><br><hr>
         {% csrf_token %}
         <table>
             <tr>
@@ -91,10 +91,11 @@
             </tr>
                     
             <tr>
-                <td>Password</td>
+                <td>Password</td><br>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
             <tr>
+                <td>&ensp;&ensp;&ensp;&ensp;</td>
                 <td><input class="button" type="submit" value="Login"></td>
             </tr>
         </table>
@@ -107,7 +108,7 @@
             {% endfor %}
         </ul>
     {% endif %}     
-        
+    
     <p>Still new? <b><a href="{% url 'todolist:register' %}">Join now</a></b></p>
     </div>
 </div>
