@@ -29,12 +29,12 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
 7. UMelakukan iterasi pada 'todolist' untuk menampilkan setiap data Task di template HTML.
 
 ### :trumpet:**Implementasi CheckList** :trumpet:
-[x] **Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.**
+- [x] **Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.**
  Masuk ke direktori Tugas 2 PBP di _command prompt_ dan memberikan perintah berikut ini. 
  ```
  python manage.py startapp todolist
  ```
-[x] **Menambahkan _path_ `todolist` sehingga pengguna dapat mengakses http://localhost:8000/todolist.**
+- [x] **Menambahkan _path_ `todolist` sehingga pengguna dapat mengakses http://localhost:8000/todolist.**
  Akses file `urls.py` yang berada pada folder `project-django` dan memasukkan _path_ `todolist` ke `urlpattern`
   ```
  urlpatterns = [
@@ -42,7 +42,7 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
  path('todolist/', include('todolist.urls')),
 ]
  ```
-[x]**Membuat sebuah model Task yang memiliki atribut user, date, title, description**
+- [x]**Membuat sebuah model Task yang memiliki atribut user, date, title, description**
  Akses 'models.py' dan tambahkan class dan atribut yang dibutuhkan. Setalah itu, lakukan migration data.
  ```
  ...
@@ -53,7 +53,7 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
     description = models.TextField()
     is_finished = models.BooleanField(default=False)
  ```
-[x]**Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.**
+- [x]**Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.**
  Membuat fungsi 'register' pada 'views.py'
  ```
  ...
@@ -101,10 +101,10 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
     return response
  ...
  ```
-[x]**Membuat halaman utama todolist.**
+- [x]**Membuat halaman utama todolist.**
  Membuat folder 'templates' dan membuat file HTML 'todolist.html' yang memuat daftar todo, tambah task, delete, dan logout button
 
-[x]**Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.**
+- [x]**Membuat halaman form untuk pembuatan task. Data yang perlu dimasukkan pengguna hanyalah judul task dan deskripsi task.**
  Pada app 'todolist', buat 'task_form.py' dan 'class TaskForm' untuk input user.
  ```
  ...
@@ -113,7 +113,7 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
     deskripsi = forms.CharField(widget=forms.Textarea)
  ...
  ```
-[x]**Membuat routing sehingga beberapa fungsi dapat diakses melalui URL**
+- [x]**Membuat routing sehingga beberapa fungsi dapat diakses melalui URL**
  Menambahkan 'path' pada 'urls.py' di folder app 'todolist'
  ```
  ...
@@ -128,9 +128,9 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
  ]
  ...
  ```
-[x]**Melakukan _deployment_ ke Heroku**
+- [x]**Melakukan _deployment_ ke Heroku**
  Melakukan 'add', 'commit', dan 'push' ke respository github. Karena respository adalah respository yang sudah terhubung ke Herokuapp dan sudah memuat semua file yang dibutuhkan untuk 'deplyment', app akan langsung dapat diakses melalui Heroku.
-[x]**Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.**
+- [x]**Membuat dua akun pengguna dan tiga dummy data menggunakan model Task pada akun masing-masing di situs web Heroku.**
  ![First Acc](https://user-images.githubusercontent.com/88421618/192875988-f1b17c43-2e9c-4f64-ac4b-ce27e4e7950d.jpg)
 ![Second Acc](https://user-images.githubusercontent.com/88421618/192876155-8d8a3623-08e7-4c1e-9a3a-275ba22e15db.jpg)
 
