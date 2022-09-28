@@ -28,19 +28,20 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
 6. Semua data object Task akan dirender atau dikirimkan ke template HTML sebagai context.
 7. UMelakukan iterasi pada 'todolist' untuk menampilkan setiap data Task di template HTML.
 
-### :trumpet:**Implementasi CheckList** :trumpet:
+### :trumpet:**Implementasi CheckList** :trumpet:**
 - [x] **Membuat suatu aplikasi baru bernama todolist di proyek tugas Django yang sudah digunakan sebelumnya.**
  Masuk ke direktori Tugas 2 PBP di _command prompt_ dan memberikan perintah berikut ini. 
  ```
  python manage.py startapp todolist
+
  ```
 - [x] **Menambahkan _path_ `todolist` sehingga pengguna dapat mengakses http://localhost:8000/todolist.**
  Akses file `urls.py` yang berada pada folder `project-django` dan memasukkan _path_ `todolist` ke `urlpattern`
-  ```
+ ```
  urlpatterns = [
- ...
  path('todolist/', include('todolist.urls')),
-]
+ ]
+
  ```
 - [x]**Membuat sebuah model Task yang memiliki atribut user, date, title, description**
  Akses 'models.py' dan tambahkan class dan atribut yang dibutuhkan. Setalah itu, lakukan migration data.
@@ -52,6 +53,7 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
     title = models.CharField(max_length=225)
     description = models.TextField()
     is_finished = models.BooleanField(default=False)
+
  ```
 - [x]**Mengimplementasikan form registrasi, login, dan logout agar pengguna dapat menggunakan todolist dengan baik.**
  Membuat fungsi 'register' pada 'views.py'
