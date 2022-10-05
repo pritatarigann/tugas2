@@ -145,5 +145,153 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
 
  ![Second Acc](https://user-images.githubusercontent.com/88421618/192876155-8d8a3623-08e7-4c1e-9a3a-275ba22e15db.jpg)
 
+# **Todo List**
+## Tugas 5 PBP 
 
+### :palm_tree: Perbedaan dari *Inline, Internal,* dan *External* CSS :palm_tree:
+1. ***Inline CSS*** adalah kode CSS yang ditulis langsung pada atribut elemen HTML. *Inline CSS* ditulis di atribut  *style*dari setiap elemen HTML. 
+**Kelebihan:**
+- Efisien digunakan jika ingin menguji dan melihat perubahan pada satu elemen.
+- Memiliki prioritas lebih tinggi sehingga berguna untuk memperbaiki kode dengan cepat.
+- Proses *request* HTTP lebih kecil dan proses *load websit* akan berjalan lebih cepat.
+**Kekurangan:**
+- Tidak efektif untuk penerapan *style* pada banyak tag HTML.
+- Penerapan banyak *style* dengan metode ini dapat menyebabkan struktur file terlihat berantakan.
 
+2. ***Internal CSS*** adalah kode CSS yang ditulis dalam 'tag <style>' di '<head>' HTML. Untuk merujuk pada kode CSS, kita bisa menggunakan ID, class, atau hanya element saja.
+**Kelebihan:**
+- Perubahan hanya berlaku pada halaman saja sehingga memungkinkan membuat halaman yang unik dan berbeda-beda.
+- Tidak memerlukan *upload* beberapa file karena HTML dan CSS berada dalam satu file.
+- Class dan ID dapat digunakan oleh 'internal stylesheet'.
+**Kekurangan:**
+- Tidak efisien jika ingin menerapkan CSS yang sama dalam beberapa file.
+- Menurunkan performa web karena CSS yang berbeda-beda memaksa dilakukannya *reloading* setiap ganti page di situs web.
+
+3. ***External CSS*** adalah kode CSS yang ditulis terpisah dengan HTML. Kode eksternal disimpan dalam file berekstensi '.css'. Untuk menghubungkan file HTML dan CSS, pada HTML perlu ditambahkan '<link>', yang menyertakan referensi ke path dimana file berada, di tag '<head>'.
+**Kelebihan:**
+- Mengecilkan ukuran file HTML dan membuat struktur kode HTML lebih rapi.
+- Loading website lebih cepat.
+- Efisien untuk penerapan CSS yang sama di beberapa halaman website.
+**Kekurangan:**
+- Halaman website akan butuh waktu untuk mengakses *styling* yang digunakan dari file CSS sehingga halaman belum tampil dengan sempurna hingga file CSS diakses.
+
+### :leaves: Tag HTML5 :leaves:
+Berikut adalah tag-tag yang ada di HTML5.
+1. `<article>`     : Menambahkan text independen, seperti sebuah blog atau artikel koran
+2. `<audio>`        : Menyisipkan audio
+3. `<canvas>`       : Menyisipkan area yang dapat digunakan untuk menggambar grafik
+4. `<dialog>`       : Menyisipkan dialog box atau subwindow
+5. `<figcaption>`   : Menyisipkan caption untuk sebuah figure
+6. `<figure>`       : Menyisipkan gambar yang diilustrasikan
+7. `<footer>`       : Mendefinisikan bagian footer dari halaman
+8. `<header>`       : Mendefinisikan bagian header dari halaman
+9. `<menuitem>`     : Mendefinisikan list command yang dapat dipilih user
+10. `<main>`        : Mendefinisikan bagian utama atau dominant content dari halaman
+11. `<nav>`          : Mendefinisikan link navigasi
+
+## :maple_leaf: Tipe-Tipe CSS Selector :maple_leaf:
+Terdapat 3 tipe CSS selector, antara lain:
+1. **CSS Element Selector** adalah selector yang memilih elemen HTML berdasarkan nama elemen terebut.
+Contoh:
+```
+p {
+  text-align: center;
+  color: blue;
+}
+```
+Keterangan: Semua elemen dengan tag '<p>' akan *center-aligned' dengan warna teks biru.
+2. **CSS ID Selector** adalah selector yang menggunakan atribut dari elemen HTML untuk memilih elemen yang spesifik. Untuk memilih elemen dengan id yang spesifik, gunakan karakter 'hash (#)' diikuti dengan id elemen.
+Contoh:
+Contoh:
+```
+#elem1 {
+  text-align: left;
+  color: yellow;
+}
+```
+Keterangan: Rule CSS tersebut akan diaplikasikan ke elemen HTML yang memiliki id="elem1".
+3. **CSS Class Selector** adalah selector yang memilih elemen HTML dengan atribut kelas yang spesifik. Untuk memilih elemen dengan class yang spesifik, gunakan karakter 'period (.)' diikuti dengan nama kelas.
+Contoh:
+```
+.wizzle {
+  text-align: center;
+  color: red;
+}
+```
+Keterangan: Rule CSS tersebut akan diaplikasikan ke elemen yang berada di class="wizzle".
+
+### :blossom: Implementasi *checklists* :blossom:
+Berikut langkah-langkah implementasi yang saya terapkan:
+- [x] **Membuat file '.css' untuk mengkostumisasi halaman.**
+Saya menerapkan *Eksternal CSS*, dimana saya membuat folder static berisi file '.css'. Di dalam file tersebut terdapat *styling* (berupa class, element, hingga font) CSS untuk mesing-masing halaman, sehingg terdapat total 4 files. Setelah itu, agar file dapat diakses oleh HTML, saya menambahkan potongan kode untuk melakukan load pada file static. Potongan kodenya adalah sebagai berikut.
+```
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '<nama-file>.css' %}">
+</head>
+```
+- [x] **Membuat cards untuk menampilkan task.**
+Pada file 'todolist.css', saya menambahkan kelas '.card' dengan potongan kode sebagai berikut.
+```
+.card {
+    box-shadow: 0 10px 8px 5px rgb(12, 33, 100);
+    background-color: #ECD5BB;;
+    transition: 0.8s;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 10px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(6px);
+    outline-style: groove;
+    outline-color: #0B1C48;
+    outline-width: 3px;
+}
+```
+Dan karena kita akan menampilkan beberapa task dengan format penampilan yang sama, maka pada 'todolist.html', buat for-loop sebagai berikut.
+```
+{% for task in todolist %}
+   ...
+   <div class="card">
+         <p class="task-date">{{task.date}}</p>
+         <p class="task-title">{{task.title}}</p><hr>
+         ...
+            <a href="/todolist/delete-task/{{task.id}}">
+               <button class="button3" type="submit">Delete</button>
+            </a>
+         </div>
+   </div> 
+   ... 
+```
+- [x] **Membuat keempat halaman menjadi *responsive*.**
+Untuk membuat halaman web menjadi responsive, perlu diatur viewport. Nah, tag 'viewport' ini sendiri telah terdapat di 'base.html' yang diextends oleh file-file HTML yang dikostumisasi. Berikut potongan kode pada 'base.html'.
+```
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block meta %}
+  {% endblock meta %}
+</head>
+```
+Dengan extend di file HTML keempat laman yang dikostumisasi dilakukan dengan menambahkan '{% extends 'base.html' %}' setelah tag '<html>'.
+
+Pada file '.css', tambahkan class '.container' flexbox agar menyesuaikan dengan layar user.
+```
+.container {
+    display: flex;
+    justify-content: center;
+}
+```
+Selain itu, saya juga menambahkan hover pada elemen-elemen dengan membuat class '<nama class>:hover'. Salah satunya adalah '.card:hover'.
+ ```
+.card:hover {
+    box-shadow: 0 8px 16px 0 #3e8baf;
+    background-color: #cbaaaa;
+}
+```
+Dan 'button:hover'
+```
+.button:hover {
+    background-color: #0B1C48;
+}
+```
