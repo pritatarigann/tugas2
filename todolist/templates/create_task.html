@@ -13,30 +13,30 @@
 
 <body>
     <div class="container">
-    <div class = "card-body">
-        <div class = "create_task">
-    <h1 class="header_style">✿ Add New Task ✿</h1>
-    <br><hr><br>
-    <form method="POST" action="">
-        {% csrf_token %}
-    <table>
-        <tr>
-        <div>
-            <td>Title:</td>
-            <td><input id="judul" type="text" name="judul" placeholder="Input your task" required></td>
+        <div class = "card-body">
+            <div class = "create_task">
+                <h1 class="header_style">✿ Add New Task ✿</h1>
+                <br><hr><br>
+                <form method="POST" action="">
+                {% csrf_token %}
+                    <table>
+                        <tr>
+                        <div>
+                            <td>Title:</td>
+                            <td><input id="judul" type="text" name="judul" placeholder="Input your task" required></td>
+                        </div>
+                    </tr>
+                        <div>
+                            <td>Description: </td>
+                            <td><input id="deskripsi" type="text" name="deskripsi" placeholder="Describe your task" required></td>
+                        </div>
+                    </table>
+                <br><br>
+                <input class="button" type="submit" value="Add">
+                </form>
+            </div>
         </div>
-    </tr>
-        <div>
-            <td>Description: </td>
-            <td><input id="deskripsi" type="text" name="deskripsi" placeholder="Describe your task" required></td>
-        </div>
-    </table>
-        <br><br>
-        <input class="button" type="submit" value="Add">
-    </form>
-</div>
-</div>
-</div>
+    </div>
 </body>
 
 {% endblock content %}

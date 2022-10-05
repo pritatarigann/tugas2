@@ -15,24 +15,23 @@
 <body>
     <div class = "login">
         <div class="container">
-        <div class="card-body">
-        <h1 class="header_style">❁ Login ❁</h1><hr>
-        <form method="POST" action="">
+            <div class="card-body">
+                <h1 class="header_style">❁ Login ❁</h1><hr>
+                <form method="POST" action="">
                 {% csrf_token %}
-                <table>
-                    <tr>
-                        <td>Username </td>
-                        <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-                    </tr>
-                            
-                    <tr>
-                        <td>Password </td>
-                        <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-                    </tr>
-                </table>
-                
+                    <table>
+                        <tr>
+                            <td>Username </td>
+                            <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                        </tr>
+                                
+                        <tr>
+                            <td>Password </td>
+                            <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                        </tr>
+                    </table>
                 <center><input class="btn button" type="submit" value="Login"></center>
-            </form>
+                </form>
 
             {% if messages %}
                 {% for message in messages %}

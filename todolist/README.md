@@ -145,6 +145,7 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
 
  ![Second Acc](https://user-images.githubusercontent.com/88421618/192876155-8d8a3623-08e7-4c1e-9a3a-275ba22e15db.jpg)
 
+
 # **Todo List**
 ## Tugas 5 PBP 
 
@@ -158,16 +159,16 @@ Hal ini dapat dilakukan dengan langkah sebagai berikut.
 - Tidak efektif untuk penerapan *style* pada banyak tag HTML.
 - Penerapan banyak *style* dengan metode ini dapat menyebabkan struktur file terlihat berantakan.
 
-2. ***Internal CSS*** adalah kode CSS yang ditulis dalam 'tag <style>' di '<head>' HTML. Untuk merujuk pada kode CSS, kita bisa menggunakan ID, class, atau hanya element saja.
+2. ***Internal CSS*** adalah kode CSS yang ditulis dalam `tag <style>` di `<head>` HTML. Untuk merujuk pada kode CSS, kita bisa menggunakan ID, class, atau hanya element saja.
 **Kelebihan:**
 - Perubahan hanya berlaku pada halaman saja sehingga memungkinkan membuat halaman yang unik dan berbeda-beda.
 - Tidak memerlukan *upload* beberapa file karena HTML dan CSS berada dalam satu file.
-- Class dan ID dapat digunakan oleh 'internal stylesheet'.
+- Class dan ID dapat digunakan oleh `internal stylesheet`.
 **Kekurangan:**
 - Tidak efisien jika ingin menerapkan CSS yang sama dalam beberapa file.
 - Menurunkan performa web karena CSS yang berbeda-beda memaksa dilakukannya *reloading* setiap ganti page di situs web.
 
-3. ***External CSS*** adalah kode CSS yang ditulis terpisah dengan HTML. Kode eksternal disimpan dalam file berekstensi '.css'. Untuk menghubungkan file HTML dan CSS, pada HTML perlu ditambahkan '<link>', yang menyertakan referensi ke path dimana file berada, di tag '<head>'.
+3. ***External CSS*** adalah kode CSS yang ditulis terpisah dengan HTML. Kode eksternal disimpan dalam file berekstensi `.css`. Untuk menghubungkan file HTML dan CSS, pada HTML perlu ditambahkan `<link>`, yang menyertakan referensi ke path dimana file berada, di tag `<head>`.
 **Kelebihan:**
 - Mengecilkan ukuran file HTML dan membuat struktur kode HTML lebih rapi.
 - Loading website lebih cepat.
@@ -199,8 +200,8 @@ p {
   color: blue;
 }
 ```
-Keterangan: Semua elemen dengan tag '<p>' akan *center-aligned' dengan warna teks biru.
-2. **CSS ID Selector** adalah selector yang menggunakan atribut dari elemen HTML untuk memilih elemen yang spesifik. Untuk memilih elemen dengan id yang spesifik, gunakan karakter 'hash (#)' diikuti dengan id elemen.
+Keterangan: Semua elemen dengan tag `<p>` akan *center-aligned* dengan warna teks biru.
+2. **CSS ID Selector** adalah selector yang menggunakan atribut dari elemen HTML untuk memilih elemen yang spesifik. Untuk memilih elemen dengan id yang spesifik, gunakan karakter `hash (#)` diikuti dengan id elemen.
 Contoh:
 Contoh:
 ```
@@ -210,7 +211,7 @@ Contoh:
 }
 ```
 Keterangan: Rule CSS tersebut akan diaplikasikan ke elemen HTML yang memiliki id="elem1".
-3. **CSS Class Selector** adalah selector yang memilih elemen HTML dengan atribut kelas yang spesifik. Untuk memilih elemen dengan class yang spesifik, gunakan karakter 'period (.)' diikuti dengan nama kelas.
+3. **CSS Class Selector** adalah selector yang memilih elemen HTML dengan atribut kelas yang spesifik. Untuk memilih elemen dengan class yang spesifik, gunakan karakter `period (.)` diikuti dengan nama kelas.
 Contoh:
 ```
 .wizzle {
@@ -222,8 +223,8 @@ Keterangan: Rule CSS tersebut akan diaplikasikan ke elemen yang berada di class=
 
 ### :blossom: Implementasi *checklists* :blossom:
 Berikut langkah-langkah implementasi yang saya terapkan:
-- [x] **Membuat file '.css' untuk mengkostumisasi halaman.**
-Saya menerapkan *Eksternal CSS*, dimana saya membuat folder static berisi file '.css'. Di dalam file tersebut terdapat *styling* (berupa class, element, hingga font) CSS untuk mesing-masing halaman, sehingg terdapat total 4 files. Setelah itu, agar file dapat diakses oleh HTML, saya menambahkan potongan kode untuk melakukan load pada file static. Potongan kodenya adalah sebagai berikut.
+- [x] **Membuat file `.css` untuk mengkostumisasi halaman.**
+Saya menerapkan *Eksternal CSS*, dimana saya membuat folder static berisi file `.css`. Di dalam file tersebut terdapat *styling* (berupa class, element, hingga font) CSS untuk mesing-masing halaman, sehingg terdapat total 4 files. Setelah itu, agar file dapat diakses oleh HTML, saya menambahkan potongan kode untuk melakukan load pada file static. Potongan kodenya adalah sebagai berikut.
 ```
 <head>
     {% load static %}
@@ -231,7 +232,7 @@ Saya menerapkan *Eksternal CSS*, dimana saya membuat folder static berisi file '
 </head>
 ```
 - [x] **Membuat cards untuk menampilkan task.**
-Pada file 'todolist.css', saya menambahkan kelas '.card' dengan potongan kode sebagai berikut.
+Pada file `todolist.css`, saya menambahkan kelas `.card` dengan potongan kode sebagai berikut.
 ```
 .card {
     box-shadow: 0 10px 8px 5px rgb(12, 33, 100);
@@ -247,7 +248,7 @@ Pada file 'todolist.css', saya menambahkan kelas '.card' dengan potongan kode se
     outline-width: 3px;
 }
 ```
-Dan karena kita akan menampilkan beberapa task dengan format penampilan yang sama, maka pada 'todolist.html', buat for-loop sebagai berikut.
+Dan karena kita akan menampilkan beberapa task dengan format penampilan yang sama, maka pada `todolist.html`, buat for-loop sebagai berikut.
 ```
 {% for task in todolist %}
    ...
@@ -263,7 +264,7 @@ Dan karena kita akan menampilkan beberapa task dengan format penampilan yang sam
    ... 
 ```
 - [x] **Membuat keempat halaman menjadi *responsive*.**
-Untuk membuat halaman web menjadi responsive, perlu diatur viewport. Nah, tag 'viewport' ini sendiri telah terdapat di 'base.html' yang diextends oleh file-file HTML yang dikostumisasi. Berikut potongan kode pada 'base.html'.
+Untuk membuat halaman web menjadi responsive, perlu diatur viewport. Nah, tag `viewport` ini sendiri telah terdapat di `base.html` yang diextends oleh file-file HTML yang dikostumisasi. Berikut potongan kode pada `base.html`.
 ```
 <head>
   <meta charset="UTF-8">
@@ -273,23 +274,23 @@ Untuk membuat halaman web menjadi responsive, perlu diatur viewport. Nah, tag 'v
   {% endblock meta %}
 </head>
 ```
-Dengan extend di file HTML keempat laman yang dikostumisasi dilakukan dengan menambahkan '{% extends 'base.html' %}' setelah tag '<html>'.
+Dengan extend di file HTML keempat laman yang dikostumisasi dilakukan dengan menambahkan `{% extends 'base.html' %}` setelah tag `<html>`.
 
-Pada file '.css', tambahkan class '.container' flexbox agar menyesuaikan dengan layar user.
+Pada file `.css`, tambahkan class `.container` flexbox agar menyesuaikan dengan layar user.
 ```
 .container {
     display: flex;
     justify-content: center;
 }
 ```
-Selain itu, saya juga menambahkan hover pada elemen-elemen dengan membuat class '<nama class>:hover'. Salah satunya adalah '.card:hover'.
+Selain itu, saya juga menambahkan hover pada elemen-elemen dengan membuat class `<nama class>:hover`. Salah satunya adalah `.card:hover`.
  ```
 .card:hover {
     box-shadow: 0 8px 16px 0 #3e8baf;
     background-color: #cbaaaa;
 }
 ```
-Dan 'button:hover'
+Dan `button:hover`
 ```
 .button:hover {
     background-color: #0B1C48;

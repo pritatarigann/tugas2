@@ -130,33 +130,33 @@ a {
 }
 .button2 {
     border: 0px;
-        background-color: #0B1C48;
-        color: #FAF7F4;
-        padding: 10px;
-        font-size: 14px;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-        text-align: center;
-        margin-left: 10px;
-        display: block;
-        justify-content: center;
-        box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
+    background-color: #0B1C48;
+    color: #FAF7F4;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 10px;
+    display: block;
+    justify-content: center;
+    box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
 }
 .button3 {
     border: 0px;
-        background-color: #710117;
-        color: #FAF7F4;
-        padding: 10px;
-        font-size: 14px;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-        text-align: center;
-        margin-left: 10px;
-        display: block;
-        justify-content: center;
-        box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
+    background-color: #710117;
+    color: #FAF7F4;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 10px;
+    display: block;
+    justify-content: center;
+    box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
 }
 .button4 {
     border: 0px;
@@ -167,6 +167,7 @@ a {
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 0%;
     text-align: center;
     margin-left: 0%;
     display: block;
