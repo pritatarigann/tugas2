@@ -15,34 +15,48 @@ body{
     display: flex;
     justify-content: center;
 }
+
 .card-body {
-    width:800px;
+    width:30px;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding:12px 60px;
+    background-color: #0305088d;;
+    border-radius: 10px;
+    box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    
+}
+.card-body-task {
+    width:60%;
     margin: 130px auto;
     padding:12px 60px;
-    background-color: #FFFFFF;;
+    background-color: #FFFF;;
     border-radius: 10px;
     box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
     backdrop-filter: blur(6px);
     outline-style: groove;
-    outline-color: #710117;
+    outline-color: #0B1C48;
     outline-width: 4px;
 }
 .card {
-    box-shadow: 0 10px 8px 5px rgb(12, 33, 100);
-    background-color: #ECD5BB;;
+    box-shadow: 0 10px 8px 5px hwb(169 10% 56%);
+    background-color: #e1d5d5;;
     transition: 0.8s;
     border-radius: 10px;
     padding: 10px; 
-    margin: 10px;
+    margin-top: 30px;
     margin-bottom: 40px;
     backdrop-filter: blur(6px);
     outline-style: groove;
     outline-color: #0B1C48;
     outline-width: 3px;
+    width: 100%;
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 #3e8baf;
-    background-color: #cbaaaa;
+    background-color: #434159;
 }
 .task-title{
     margin-top: 0px;
@@ -93,6 +107,7 @@ h1{
     line-height: 15px;
     color: #710117;
 }
+
 h2 {
     color: #0B1C48;
 }
@@ -115,22 +130,22 @@ a {
 }
 .button1 {
     border: 0px;
-    background-color: #710117;
-    color: #FAF7F4;
+    background-color: #FAF7F4;
+    color: #710117;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin-left: 85%;
+    margin-left: 10px;
     display: block;
     justify-content: center;
     box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
 }
 .button2 {
     border: 0px;
-    background-color: #0B1C48;
+    background-color: #710117;
     color: #FAF7F4;
     padding: 10px;
     font-size: 14px;
@@ -145,8 +160,8 @@ a {
 }
 .button3 {
     border: 0px;
-    background-color: #710117;
-    color: #FAF7F4;
+    background-color: #0B1C48;
+    color: #FFFFFF;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -154,6 +169,7 @@ a {
     cursor: pointer;
     text-align: center;
     margin-left: 10px;
+    width: 100px;
     display: block;
     justify-content: center;
     box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
@@ -161,24 +177,39 @@ a {
 .button4 {
     border: 0px;
     background-color: #710117;
-    color: #FAF7F4;
+    color: #FFFFFF;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    margin-bottom: 0%;
     text-align: center;
-    margin-left: 0%;
+    margin-left: 10px;
+    width: 100px;
+    display: block;
+    justify-content: center;
+    box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
+}
+.button5 {
+    border: 0px;
+    background-color: #710117;
+    color: #FAF7F4;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
     display: block;
     justify-content: center;
     box-shadow: 3px 1px 10px 0px rgba(0,0,0,0.75);
 }
 .button1:hover {
-    background-color: #2c2c2c;
+    background-color: #0B1C48;
 }
 .button2:hover {
-    background-color: #2c2c2c;
+    background-color: #0B1C48;
 }
 .button3:hover {
     background-color: #2c2c2c;
@@ -186,12 +217,15 @@ a {
 .button4:hover {
     background-color: #2c2c2c;
 }
-.header_style{
+.button5:hover {
+    background-color: #2c2c2c;
+}
+span{
     width: 100%;
     float: left;
     font-size: 40px;
     color: #710117;
-    text-align: center;
+    text-align: left;
     margin: 0px;
     font-family: 'Cinzel Decorative'; 
 }
@@ -203,4 +237,64 @@ a {
     text-align: center;
     margin: 0px;
     font-family: 'Gentydemo'; 
+}
+.header_style3{
+    width: 100%;
+    float: left;
+    font-size: 120%;
+    color: #0B1C48;
+    text-align: center;
+    margin: 0px;
+    font-family: 'Cinzel'; 
+}
+
+.header_style4{
+    width: 150%;
+    float: left;
+    font-size: 200%;
+    color: #0B1C48;
+    text-align: center;
+    margin: 0px;
+    font-family: 'Cinzel Decorative';
+} 
+
+.header_style5{
+    width: 100%;
+    float: left;
+    font-size: 80%;
+    color: #0B1C48;
+    text-align: center;
+    margin: 0px;
+    font-family: 'Cinzel Decorative';
+} 
+
+label{
+    width: 150%;
+    float: left;
+    font-size: 100%;
+    color: #0B1C48;
+    text-align: left;
+    margin: 0px;
+    font-family: 'Georgia';
+} 
+table {
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border-width: 5px;
+}
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #2c2c2c;
+    color: #FFFFFF;
+    font-family: 'Georgia';
 }
