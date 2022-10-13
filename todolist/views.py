@@ -53,7 +53,7 @@ def create_task(request):
         messages.success(request, "Successfully add new task")
         return redirect('todolist:show_todolist')
     context = {}
-    return render(request, 'new_task.html', context)
+    return render(request, 'create_task.html', context)
 
 @login_required(login_url='/todolist/login/')
 def delete_task(request, id):
