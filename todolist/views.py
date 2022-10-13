@@ -6,6 +6,10 @@ from todolist.models import Task
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+import datetime
+import pytz
 
 
 def register(request):
@@ -15,7 +19,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully created an account')
+            messages.success(request, 'Account has been created successfully!')
             return redirect('todolist:login')
     
     context = {'form': form}
@@ -27,8 +31,11 @@ def login_user(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
-            return redirect('todolist:show_todolist_ajax')
+            login(request, user) # login
+            response = HttpResponseRedirect(reverse("todolist:show_todolist_ajax")) # Membuat response
+            timezone = pytz.timezone('Asia/Jakarta')
+            response.set_cookie('last_login', str(datetime.datetime.now(tz = timezone))) # create cookie last_login 
+            return response
         else:
             messages.info(request, 'Username or password is wrong')
     context = {}
@@ -36,10 +43,12 @@ def login_user(request):
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    task_data = Task.objects.filter(user = request.user)
+    username = request.user.username
+    user_id = request.user.id
+    data_todolist = Task.objects.filter(user_id=user_id) # save data
     context = {
-        'task_list': task_data,
-        'username': request.user,
+        "username": username,
+        "todolist": data_todolist
     }
     return render(request, "todolist.html", context)
 
@@ -47,8 +56,8 @@ def show_todolist(request):
 def create_task(request):
     if request.method == 'POST':
         user = request.user
-        title = request.POST.get('taskname')
-        description = request.POST.get('taskdesc')
+        title = request.POST.get('judul')
+        description = request.POST.get('deskripsi')
         task = Task.objects.create(user=user, title=title, description=description)
         messages.success(request, "Successfully add new task")
         return redirect('todolist:show_todolist')
@@ -78,8 +87,12 @@ def show_json(request):
 
 @login_required(login_url='/todolist/login/')
 def show_todolist_ajax(request):
+    username = request.user.username
+    user_id = request.user.id
+    data_todolist = Task.objects.filter(user_id=user_id) # save data
     context = {
-        'username': request.user,
+        "username": username,
+        "todolist": data_todolist
     }
     return render(request, "todolist.html", context)
 
